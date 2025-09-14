@@ -1,0 +1,440 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta link="https://BrightestStarGame.github.io/press/">
+	<meta link2="lunatongame.com/press/">
+	<title>Press Kit - Brightest Star Game</title>
+	<style>
+		:root {
+			--primary: black;
+			--secondary: white;
+			--dark: #14213d;
+			--light: #f8f9fa;
+			--accent: gold;
+			--gray: #adb5bd;
+		}
+		
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		
+		body {
+			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+			line-height: 1.6;
+			color: var(--dark);
+			background-color: var(--light);
+		}
+		
+		.container {
+			max-width: 1200px;
+			margin: 0 auto;
+			padding: 0 20px;
+		}
+		
+		header {
+			background: linear-gradient(135deg, var(--primary), var(--secondary));
+			color: white;
+			padding: 60px 0;
+			text-align: center;
+		}
+		
+		.logo {
+			max-width: 600px;
+			margin: 0 auto;
+			filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+		}
+		
+		h1 {
+			font-size: 2.8rem;
+			margin-bottom: 10px;
+			font-weight: 700;
+		}
+		
+		.tagline {
+			font-size: 1.2rem;
+			opacity: 0.9;
+			margin-bottom: 30px;
+		}
+		
+		.download-btn {
+			display: inline-block;
+			background-color: var(--accent);
+			color: black;
+			padding: 12px 30px;
+			border-radius: 30px;
+			text-decoration: none;
+			font-weight: 600;
+			transition: all 0.3s ease;
+			box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+		}
+		
+		.download-btn:hover {
+			transform: translateY(-3px);
+			box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+		}
+		
+		section {
+			padding: 60px 0;
+		}
+		
+		.section-title {
+			text-align: center;
+			font-size: 2rem;
+			margin-bottom: 40px;
+			color: var(--dark);
+			position: relative;
+		}
+		
+		.section-title:after {
+			content: '';
+			display: block;
+			width: 80px;
+			height: 4px;
+			background: linear-gradient(90deg, var(--primary), var(--secondary));
+			margin: 15px auto 0;
+			border-radius: 2px;
+		}
+		
+		.game-info {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+			gap: 30px;
+			margin-bottom: 60px;
+		}
+		
+		.info-card {
+			background: white;
+			border-radius: 0px;
+			padding: 30px;
+			box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+			transition: transform 0.3s ease;
+		}
+		
+		.info-card:hover {
+			transform: translateY(-10px);
+		}
+		
+		.info-card h3 {
+			font-size: 1.5rem;
+			margin-bottom: 15px;
+			color: var(--primary);
+			display: flex;
+			align-items: center;
+		}
+		
+		.info-card h3 svg {
+			margin-right: 10px;
+			color: var(--secondary);
+		}
+		
+		.screenshots {
+			display: grid;
+			grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+			gap: 20px;
+			margin-bottom: 60px;
+		}
+		
+		.screenshot {
+			border-radius: 0px;
+			overflow: hidden;
+			box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+			transition: all 0.3s ease;
+		}
+		
+		.screenshot:hover {
+			transform: scale(1.03);
+			box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+		}
+		
+		.screenshot img {
+			width: 100%;
+			height: 200px;
+			object-fit: cover;
+			display: block;
+		}
+		
+		.logos {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			gap: 30px;
+			margin-bottom: 60px;
+		}
+		
+		.logo-item {
+			text-align: center;
+			flex: 1;
+			min-width: 150px;
+		}
+		
+		.logo-item img {
+			max-width: 120px;
+			height: auto;
+			margin-bottom: 15px;
+			filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+		}
+		
+		.logo-item h4 {
+			font-size: 0.9rem;
+			color: var(--gray);
+			margin-top: 10px;
+		}
+		
+		.specs {
+			background-color: var(--dark);
+			color: white;
+			border-radius: 0px;
+			padding: 40px;
+			margin-bottom: 60px;
+		}
+		
+		.specs h3 {
+			font-size: 1.8rem;
+			margin-bottom: 20px;
+			color: white;
+			text-align: center;
+		}
+		
+		.specs-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+			gap: 20px;
+		}
+		
+		.spec-item {
+			background-color: rgba(255, 255, 255, 0.1);
+			padding: 20px;
+			border-radius: 10px;
+			backdrop-filter: blur(10px);
+		}
+		
+		.spec-item h4 {
+			font-size: 1.1rem;
+			margin-bottom: 10px;
+			color: var(--accent);
+		}
+		
+		.contact {
+			text-align: center;
+			padding: 0px 0 20px;
+			/*padding: 60px 0;
+			background-color: #f0f2f5;*/
+		}
+		
+		.contact-info {
+			/*max-width: 600px;*/
+			margin: 0 auto;
+			padding: 30px;
+			background: white;
+			border-radius: 0px;
+			box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+		}
+		
+		.contact-info p {
+			margin-bottom: 15px;
+			font-size: 1.1rem;
+		}
+		
+		.contact-info a {
+			color: var(--primary);
+			text-decoration: none;
+			font-weight: 600;
+		}
+		
+		.contact-info a:hover {
+			text-decoration: underline;
+		}
+		
+		footer {
+			text-align: center;
+			padding: 30px 0;
+			color: var(--gray);
+			font-size: 0.9rem;
+			background-color: var(--dark);
+			color: rgba(255, 255, 255, 0.7);
+		}
+				
+		.animated-gif {
+		  width:100%; 
+		  text-align:center; 
+		  padding-bottom: 60px;
+		}
+		.animated-gif img {
+		  width: 700px;
+		  height: 300px;  
+		  border-radius: 0px;
+		}
+		
+		@media (max-width: 768px) {
+			h1 {
+				font-size: 2.2rem;
+			}
+			
+			.section-title {
+				font-size: 1.8rem;
+			}
+			
+			section {
+				padding: 40px 0;
+			}
+			
+			.logo {
+				max-width: 200px;
+			}
+			
+			.animated-gif img {
+			  max-width: 700px;
+			  width: 100%;
+			  height: auto; 
+			}
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<div class="container">
+			<img src="images/logo/logo_transparent_white.png" alt="Brightest Star logo" class="logo">
+			<!--<h1>Brightest Star</h1>-->
+			<p class="tagline">A cosmic journey through space, time and other dimensions.</p>
+			<a href="brightest_star_presskit.zip" class="download-btn">Download Press Kit (ZIP, 286MB)</a>
+		</div>
+	</header>
+
+	<main class="container">
+	
+		<section id="about">
+			<h2 class="section-title">About</h2>
+		
+			<div class="game-info">
+				<div class="info-card">
+					<h3>Genre</h3>
+					<p>Brightest Star is a narrative adventure pcgame with elements of a visual novel and exploration set in a detailed sci-fi universe. Your moral choices and decisions will set off a chain of events with far-reaching consequences, determining the fate of not only the main character but all of humanity.</p>
+				</div>
+				<div class="info-card">
+					<h3>Features</h3>
+					<ul>
+						<li>Deep and Non-Linear Story. Every choice you make has consequences and changes the course of the story.</li>
+						<li>Dialogue System. Interacting with other characters will help you understand their motives and hidden thoughts, as well as gain crucial support.</li>
+						<li>Exploration of a Future World. An atmospheric immersion into an original vision of the 22nd century, where humanity's achievements and the individual's role in society are paramount.</li>
+						<li>Engaging Missions. Solve routine problems for a starship pilot and unexpected puzzles.</li>
+						<li>Educational Value. Throughout the game, you will learn many interesting facts about our Solar System and cosmic phenomena.</li>
+						<li>Third-Person Character Control.</li>
+						<li>Modern Graphics and Visuals. Featuring bold architectural designs.</li>
+					</ul>
+				</div>
+				<div class="info-card">
+					<h3>Brief</h3>
+					<p>Name: Brightest Star</p>
+					<p>Genre: Adventure</p>
+					<p>Developer: The Koltyrins</p>
+					<p>Release Date: 2026</p>
+					<p>Platform: PC</p>
+					<p>Tech: Unreal Engine 5</p>
+					<p><a href="https://store.steampowered.com/app/3895400/Brightest_Star/">Brightest Star on Steam</a></p>
+					<p><a href="https://BrightestStarGame.github.io/press/">Brightest Star press kit</a></p>
+					<p>&nbsp;</p>
+					<h3>Tags</h3>
+					<p>#adventure #indie</p>
+					<p>#pcgame #steam</p>
+					<p>#plot #decisions #endings</p>
+					<p>#roleplay #actions</p>
+					<p>#scifi #future</p>
+					<p>#space #dimensions #timetravelling</p>
+					<p>#starships #robots #posthumans</p>
+				</div>
+			</div>
+		
+			<div class="animated-gif">
+				<img src="images/welcome.gif" alt="Brightest Star welcome">
+			</div>
+		
+			<section class="contact">
+				<div class="contact-info" style="text-align: justify;">			
+					<p>In the year 2130, humanity has made a technological leap and is seriously exploring the Solar System. The main character is a spaceship pilot, a son of his era, a well-respected young man with vibrant dreams and ambitions. He has a solid contract with a corporation, and his next job is to deliver another cargo from Pluto to Earth. This time, the departure day doesn't go as planned: there is a delay at the spaceport, and then an unexpected, unwelcome companion joins him. And this is just the beginning of a series of amazing events where the question of life and death will arise not only for humans but for entire galaxies...</p>
+
+					<p>Welcome to the game! Brightest Star is a creation of a husband and wife duo, and we invite you to share with us a vision of life in the 22nd century. We love, we explore, we reflect, we invent - and we encourage you to dive fearlessly into the depths of the narrative. This is a story about human nature, society, the engineering of the soul, the evolution of the body, and the metamorphoses of consciousness. It revolves around the choices one must make in unique and completely unexpected circumstances. When such vital questions for humanity are addressed, a looming shadow arises: are humans important in an infinite Universe? Who are we here — fleeting moments, a spark lasting merely a few thousand years? Even if human civilization leaves its mark and spreads across the boundless cosmos, will it leave any significant trace, and who will see it? There are always more questions than answers, and we sincerely hope that after playing, both will only increase for you.</p>
+
+					<p>The release of the game is scheduled for 2026. Before that, we plan to release a demo version so that everyone can familiarize themselves with the gameplay and technical features. Please add Brightest Star to your wishlist. This will support us, and you will also be able to keep up with remarkable news and not miss important announcements.</p>
+				</div>
+			</section>
+		</section>
+
+		<section id="screenshots">
+			<h2 class="section-title">4K Screenshots</h2>
+			<div class="screenshots">
+				<div class="screenshot">
+					<a href="images/screens/screen7.jpg" target="_blank"><img src="images/screens/screen7_thumb.jpg" alt="Brightest Star screenshot"></a>
+				</div>
+				<div class="screenshot">
+					<a href="images/screens/screen8.jpg" target="_blank"><img src="images/screens/screen8_thumb.jpg" alt="Brightest Star screenshot"></a>
+				</div>
+				<div class="screenshot">
+					<a href="images/screens/screen4.jpg" target="_blank"><img src="images/screens/screen4_thumb.jpg" alt="Brightest Star screenshot"></a>
+				</div>
+				<div class="screenshot">
+					<a href="images/screens/screen1.jpg" target="_blank"><img src="images/screens/screen1_thumb.jpg" alt="Brightest Star screenshot"></a>
+				</div>
+				<div class="screenshot">
+					<a href="images/screens/screen2.jpg" target="_blank"><img src="images/screens/screen2_thumb.jpg" alt="Brightest Star screenshot"></a>
+				</div>
+				<div class="screenshot">
+					<a href="images/screens/screen3.jpg" target="_blank"><img src="images/screens/screen3_thumb.jpg" alt="Brightest Star screenshot"></a>
+				</div>
+				<div class="screenshot">
+					<a href="images/screens/screen9.jpg" target="_blank"><img src="images/screens/screen9_thumb.jpg" alt="Brightest Star screenshot"></a>
+				</div>
+				<div class="screenshot">
+					<a href="images/screens/screen5.jpg" target="_blank"><img src="images/screens/screen5_thumb.jpg" alt="Brightest Star screenshot"></a>
+				</div>
+				<div class="screenshot">
+					<a href="images/screens/screen6.jpg" target="_blank"><img src="images/screens/screen6_thumb.jpg" alt="Brightest Star screenshot"></a>
+				</div>
+			</div>
+		</section>
+
+		<section id="trailers">
+			<h2 class="section-title">4K Trailers</h2>
+			<div style="display: flex; justify-content: center; margin-bottom: 60px;">
+				<div style="position: relative; width: 80%; max-width: 800px; height: 0; padding-bottom: 56.25%;">
+					<iframe width="560" height="315" src="https://www.youtube.com/watch?v=WP7OAPlisDw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 0px; box-shadow: 0 15px 35px rgba(0,0,0,0.2);">
+					</iframe>
+				</div>
+			</div>
+			<div style="text-align: center;">
+				<a href="https://www.youtube.com/@BrightestStarGame" class="download-btn">Official Youtube Channel</a>
+			</div>
+		</section>
+
+		<section id="logos">
+			<h2 class="section-title">High-resolution Logos</h2>
+			<div class="logos">
+				<div class="logo-item" style="background-color: black; border-radius: 0px;">
+					<a href="images/logo/logo_transparent_white.png" target="_blank">
+						<img src="images/logo/thumb_logo_transparent_white.png" alt="Brightest Star logo">
+					</a>
+					<h4>transparent PNG</h4>
+				</div>
+				<div class="logo-item" style="background-color: white; border-radius: 0px;">
+					<a href="images/logo/logo_transparent_black.png" target="_blank">
+						<img src="images/logo/thumb_logo_transparent_black.png" alt="Brightest Star logo">
+					</a>
+					<h4>transparent PNG</h4>
+				</div>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<footer>
+		<div class="container">
+			<p>&copy; 2025 Brightest Star. All rights reserved</p>
+			<p style="margin-top: 10px; font-size: 0.8rem;">Last update: 14.09.2025</p>
+		</div>
+	</footer>
+</body>
+</html>
+```
